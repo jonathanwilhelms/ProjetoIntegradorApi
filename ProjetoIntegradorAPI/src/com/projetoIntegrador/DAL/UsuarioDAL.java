@@ -71,7 +71,7 @@ public class UsuarioDAL {
 	public static Boolean Alterar(UsuarioModel model) throws BDException {
 		Connection conexao = Conexao.getConexao();
 		try {
-			PreparedStatement pst = conexao.prepareStatement("UPDATE USUARIO SET NOME = ?, EMAIL = ?, SENHA = ?, PERFIL = ?, COD_SETOR = ? WHERE ID = ?);");
+			PreparedStatement pst = conexao.prepareStatement("UPDATE USUARIO SET NOME = ?, EMAIL = ?, SENHA = ?, PERFIL = ?, COD_SETOR = ? WHERE ID = ?;");
 			pst.setString(1, model.getNome());
 			pst.setString(2, model.getEmail());
 			pst.setString(3, model.getSenha());
